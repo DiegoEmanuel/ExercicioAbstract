@@ -1,12 +1,12 @@
 public abstract class Produto {
-    private String cod;
+    private String codigo;
     private String nome;
     private String descricao;
     double preco;
     
     //construtor
     public Produto(String c, String n, String d, double preco){
-        this.cod=(c);
+        this.codigo=(c);
         this.nome=(n);
         this.descricao=(d);
         this.preco=(preco);               
@@ -20,11 +20,11 @@ public abstract class Produto {
     public void setNome(String n){
         this.setNome(n);
     }
-    public String getCod(){
-        return this.cod;
+    public String getCodigo(){
+        return this.codigo;
     }
-    public void setCod(String c){
-        this.setCod(c);
+    public void setCodigo(String c){
+        this.setCodigo(c);
     }
     public String getDescricao(){
         return this.descricao;

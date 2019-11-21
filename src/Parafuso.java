@@ -1,10 +1,22 @@
-public class Parafuso extends Produto {
-    
+public class Parafuso  extends Produto{
+   
     private double comprimento;
-    private double diamentro;
+    private double diametro;
     
-    public Parafuso(String c, String n, String d, double preco){
-        super(c,n,d,preco);
+    public Parafuso(String c, String n, String d, double p, double co, double di) {
+        super(c, n, d, p);
+        this.setComprimento(co);
+        this.setDiametro(di);
+    }
+    
+    
+     public double calcularPrecoFinal() {
+       return getPreco() + getPreco()*0.15;
+    }
+
+   
+    public String imprimirDados() {
+        return "Codigo: "+getCodigo()+ "|| Nome: " + getNome() + "|| Descrição: " + getDescricao() + "|| Valor: " + getPreco()+"\n Potencia: " + this.getComprimento()+"|| RPM: "+ this.getDiametro();
     }
 
     public double getComprimento() {
@@ -15,24 +27,14 @@ public class Parafuso extends Produto {
         this.comprimento = comprimento;
     }
 
-    public double getDiamentro() {
-        return diamentro;
+    public double getDiametro() {
+        return diametro;
     }
 
-    public void setDiamentro(double diamentro) {
-        this.diamentro = diamentro;
+    public void setDiametro(double diametro) {
+        this.diametro = diametro;
     }
+   
     
     
-    
-    public double calcularPrecoFinal(){
-        double reajuste= getPreco()*0.15;
-        double precofinal= reajuste+preco;
-        return precofinal;
-    }
-    public String imprimirDados(){
-        return ("Codigo: "+getCod()+"nome:"+getNome()+"descricao: "+getDescricao()
-                +"Valor: "+getPreco()+"Comprimento: "+this.getComprimento()+"diametro: "+this.getDiamentro());
-    }
 }
-// IMPRIMIR NO MAIN System.out.println(p1.imprimirdados());

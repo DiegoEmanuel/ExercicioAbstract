@@ -1,10 +1,11 @@
 public class TestaProfessor {
-    public  static void main (String[]Args){
+    public static void main(String[] args) {
         
-        ProfessorInte p1 = new ProfessorInte("joao",1400);
-        ProfessorHori p2 = new ProfessorHori("joao",1400);
-       
-        //p1.calcularsalario();
-        System.out.println();
-    } 
+        ProfessorIntegral pI = new ProfessorIntegral("Matheus", 3500);
+        ProfessorHorista pH = new ProfessorHorista("Agostinho", 160, 20);
+        
+        System.out.println("Salario do Professor Integral " + pI.getNome() +", é: "+ pI.calculaSalarioLiquido());
+        System.out.println("Salario do Professor Horista " + pH.getNome() +", é: "+ pH.calculaSalarioLiquido());
+        
+    }
 }

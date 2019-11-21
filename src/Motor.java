@@ -1,37 +1,40 @@
-    public class Motor extends Produto {
+public class Motor extends Produto{
     
-    private double Potencia;
-    private double RPM;
+    private double potencia;
+    private double rpm;
     
-    public Motor(String c, String n, String d, double preco){
-        super(c,n,d,preco);
+    public Motor(String c, String n, String d, double p, double po, double r) {
+        super(c, n, d, p);
+        this.setPotencia(po);
+        this.setRpm(r);
+    }
+
+
+    public double calcularPrecoFinal() {
+       return getPreco() - getPreco()*0.05;
+    }
+
+   
+    public String imprimirDados() {
+        return "Codigo: "+getCodigo()+ "|| Nome: " + getNome() + "|| Descrição: " + getDescricao() + "|| Valor: " + getPreco()+"\n Potencia: " + this.getPotencia()+"|| RPM: "+ this.getRpm();
     }
 
     public double getPotencia() {
-        return Potencia;
+        return potencia;
     }
 
-    public void setPotencia(double Potencia) {
-        this.Potencia = Potencia;
+    public void setPotencia(double potencia) {
+        this.potencia = potencia;
     }
 
-    public double getRPM() {
-        return RPM;
+    public double getRpm() {
+        return rpm;
     }
 
-    public void setRPM(double RPM) {
-        this.RPM = RPM;
+    public void setRpm(double rpm) {
+        this.rpm = rpm;
     }
     
     
     
-    public double calcularPrecoFinal(){
-        double reajuste= getPreco()*0.15;
-        double precofinal= reajuste+preco;
-        return precofinal;
-    }
-    public String imprimirDados(){
-        return ("Codigo: "+getCod()+"nome:"+getNome()+"descricao: "+getDescricao()
-                +"Valor: "+getPreco()+"Comprimento: "+this.getPotencia()+"diametro: "+this.getRPM());
-    }
-}
+}   
